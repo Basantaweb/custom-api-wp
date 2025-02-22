@@ -1,0 +1,138 @@
+{
+    "info": {
+        "_postman_id": "12345678-90ab-cdef-1234-567890abcdef",
+        "name": "WP OOPS API Collection",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Page",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"My New Page\",\n    \"content\": \"This is the content of the page.\",\n    \"status\": \"publish\"\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/wp-json/wp-oops/v1/create-page",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "wp-oops", "v1", "create-page"]
+                }
+            }
+        },
+        {
+            "name": "Update Page",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"page_id\": 123,\n    \"title\": \"Updated Page Title\",\n    \"content\": \"Updated content of the page.\",\n    \"status\": \"draft\"\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/wp-json/wp-oops/v1/update-page",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "wp-oops", "v1", "update-page"]
+                }
+            }
+        },
+        {
+            "name": "Create Child Page",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Child Page\",\n    \"content\": \"This is a child page.\",\n    \"status\": \"publish\",\n    \"parent_id\": 123\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/wp-json/wp-oops/v1/create-child-page",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "wp-oops", "v1", "create-child-page"]
+                }
+            }
+        },
+        {
+            "name": "Update Child Page",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"page_id\": 456,\n    \"title\": \"Updated Child Page Title\",\n    \"content\": \"Updated content of the child page.\",\n    \"status\": \"private\",\n    \"parent_id\": 123\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/wp-json/wp-oops/v1/update-child-page",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "wp-oops", "v1", "update-child-page"]
+                }
+            }
+        },
+        {
+            "name": "Get Page",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{base_url}}/wp-json/wp-oops/v1/get-page?id=123",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "wp-oops", "v1", "get-page"],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "123"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Post",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{base_url}}/wp-json/wp-oops/v1/get-post?id=123",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "wp-oops", "v1", "get-post"],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "123"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get All Pages",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{base_url}}/wp-json/wp-oops/v1/get-all-pages",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "wp-oops", "v1", "get-all-pages"]
+                }
+            }
+        }
+    ]
+}
